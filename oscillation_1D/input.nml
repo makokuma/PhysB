@@ -1,0 +1,12 @@
+&physics
+  N = 50
+  k = 1.0
+  m = 1.0
+/
+
+&numerics
+  dt = 1.0e-3
+  nstep = 20000
+  output_interval = 10
+/
+

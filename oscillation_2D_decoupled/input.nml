@@ -1,0 +1,20 @@
+&physics
+  N = 50
+  kx = 1.0
+  ky = 1.0
+  m = 1.0
+  l0 = 1.0
+/
+
+&numerics
+  dt = 1.0e-3
+  nstep = 200000
+  output_interval = 50
+/
+
+&init
+  init_type = "pluck_xy"   ! "pluck_y", "pluck_x", "pluck_xy", "none"
+  amp       = 1.0         ! 変位量
+  pos_frac  = 0.1         ! どこを引くか（0〜1）
+/
+

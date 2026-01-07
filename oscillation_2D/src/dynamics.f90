@@ -32,9 +32,11 @@ contains
       ax(i+1) = ax(i+1) - fx / m
       ay(i+1) = ay(i+1) - fy / m
 
+
     end do
 
+    !加速度の一時的なゼロ(横波確認用）
+    ax(1:N)=0._8
   end subroutine compute_acceleration_2d
 
 end module dynamics
-

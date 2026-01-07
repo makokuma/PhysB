@@ -72,32 +72,19 @@ program coupled_oscillator
 
   do step = 1, nstep
 
-    ! --- 1. 速度を半ステップ進める ---
-!    v = v + 0.5d0 * a * dt
+    vx = vx + 0.5d0 * ax * dt
+    vy = vy + 0.5d0 * ay * dt
 
-    ! --- 2. 位置を1ステップ進める ---
-!    x = x + v * dt
-
-    ! --- 固定端条件 ---
-!    x(1) = 0.0d0
-!    x(N) = 0.0d0
-
+    rx = rx + vx * dt
+    ry = ry + vy * dt
 
     rx(1) = 0.0d0
     ry(1) = 0.0d0
     rx(N) = (N-1) * l0
     ry(N) = 0.0d0
 
-    vx(1) = 0.0d0
-    vy(1) = 0.0d0
-    vx(N) = 0.0d0
-    vy(N) = 0.0d0
-
-    vx = vx + 0.5d0 * ax * dt
-    vy = vy + 0.5d0 * ay * dt
-
-    rx = rx + vx * dt
-    ry = ry + vy * dt
+    !vxも念の為0
+    vx(1:N)=0._8
 
     call compute_acceleration_2d(rx, ry, ax, ay, N, k, m, l0)
 
@@ -105,16 +92,13 @@ program coupled_oscillator
     vy = vy + 0.5d0 * ay * dt
 
 
-    ! --- 3. 新しい加速度 ---
-!    call compute_acceleration(x, a, N, k, m)
+    vx(1) = 0.0d0
+    vy(1) = 0.0d0
+    vx(N) = 0.0d0
+    vy(N) = 0.0d0
 
-    ! --- 4. 速度をもう半ステップ ---
-!    v = v + 0.5d0 * a * dt
-
-    ! --- 固定端条件 ---
-!    v(1) = 0.0d0
-!    v(N) = 0.0d0
-
+    !vxも念の為0
+    vx(1:N)=0._8
     t = t + dt
 
     if (mod(step, output_interval) == 0) then

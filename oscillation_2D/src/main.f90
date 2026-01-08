@@ -84,7 +84,7 @@ program coupled_oscillator
     ry(N) = 0.0d0
 
     !vxも念の為0
-    vx(1:N)=0._8
+!    vx(1:N)=0._8
 
     call compute_acceleration_2d(rx, ry, ax, ay, N, k, m, l0)
 
@@ -98,7 +98,7 @@ program coupled_oscillator
     vy(N) = 0.0d0
 
     !vxも念の為0
-    vx(1:N)=0._8
+!    vx(1:N)=0._8
     t = t + dt
 
     if (mod(step, output_interval) == 0) then

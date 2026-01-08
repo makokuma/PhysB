@@ -8,7 +8,7 @@
 &numerics
   dt = 1.0e-3
   nstep = 200000
-  output_interval = 50
+  output_interval = 5
 /
 
 &init

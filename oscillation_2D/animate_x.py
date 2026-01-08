@@ -52,7 +52,7 @@ def update(frame):
 
 # --- アニメーション ---
 dt_frame = t[1] - t[0]
-speedup = 200.0
+speedup = 10000.0
 
 ani = FuncAnimation(
     fig,
@@ -63,7 +63,7 @@ ani = FuncAnimation(
     blit=False
 )
 
-ani.save("oscillation_2D.mp4", writer="ffmpeg", fps=200)
+ani.save("oscillation_2D.mp4", writer="ffmpeg", fps=10000)
 
 plt.show()
 

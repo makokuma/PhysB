@@ -25,10 +25,21 @@ ax.set_ylabel("y")
 spring_line, = ax.plot([], [], "-", lw=2, color="k")
 mass_points, = ax.plot([], [], "o", ms=6, color="k")
 
-ax.set_aspect(8.0)
-ax.set_xlim(np.min(rx) - 0.5, np.max(rx) + 0.5)
+#ax.set_aspect(8.0)
+#ax.set_xlim(np.min(rx) - 0.5, np.max(rx) + 0.5)
 #ax.set_ylim(np.min(ry) - 0.5, np.max(ry) + 0.5)
-ax.set_ylim(-1.0, 1.0)
+#ax.set_ylim(-1.0, 1.0)
+
+ax.set_aspect("equal", adjustable="box")
+
+xmin = np.min(rx) - 0.5
+xmax = np.max(rx) + 0.5
+ymin = np.min(ry) - 1.5
+ymax = np.max(ry) + 1.5
+
+ax.set_xlim(xmin, xmax)
+ax.set_ylim(ymin, ymax)
+
 
 # --- 初期化 ---
 def init():
